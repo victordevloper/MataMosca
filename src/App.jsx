@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Mosca from './imagens/mosca.png';
 
 function App() {
-  const [count, setCount] = useState(0)
+  var altura = window.innerHeight
+  var largura = window.innerWidth
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  console.log(altura, largura)
+
+  var positionX = Math.floor(Math.random() * largura)
+  var positionY = Math.floor(Math.random() * altura) 
+
+  var mosca = document.createElement('img')
+  mosca.src = Mosca
+  mosca.className = 'mosca1'
+  document.body.appendChild(mosca)
+
+  mosca.style.left = positionX + 'px'
+  mosca.style.top = positionY + 'px'
+  mosca.style.position = 'absolute'
 }
 
 export default App
